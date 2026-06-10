@@ -965,8 +965,8 @@ body::after{
 .vid-fallback-link svg{width:16px;height:16px}
 
 </style>
-<style>.countdown-bar{background:rgba(19,23,19,0.9);color:var(--lime);text-align:center;padding:8px;font-family:"JetBrains Mono",monospace;font-size:0.85rem;border-bottom:1px solid var(--lime);letter-spacing:1px;backdrop-filter:blur(5px);position:relative;z-index:1000}.countdown-bar span{color:var(--gold);font-weight:bold}</style></head>
-<body><div class="countdown-bar">⏳ Épreuve de SES dans : <span id="timer"></span></div><script>const examDate=new Date("June 16, 2026 08:00:00").getTime();setInterval(function(){const now=new Date().getTime();const diff=examDate-now;const d=Math.floor(diff/(1000*60*60*24));const h=Math.floor((diff%(1000*60*60*24))/(1000*60*60));const m=Math.floor((diff%(1000*60*60))/(1000*60));const s=Math.floor((diff%(1000*60))/1000);document.getElementById("timer").innerHTML=d+"j "+h+"h "+m+"m "+s+"s"},1000)</script>
+<style>.top-nav-minimal{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:var(--ink);border-bottom:1px solid var(--ink3);font-family:"Plus Jakarta Sans",sans-serif;font-size:0.75rem;letter-spacing:0.5px}.nav-link-hggsp{color:var(--lime);text-decoration:none;display:flex;align-items:center;gap:6px;transition:opacity 0.2s;font-weight:600}.nav-link-hggsp:hover{opacity:0.8}.nav-link-hggsp::before{content:"";width:6px;height:6px;background:var(--gold);border-radius:50%}.minimal-timer{color:var(--gold);font-family:"JetBrains Mono",monospace;opacity:0.9}</style></head>
+<body><nav class="top-nav-minimal"><a href="https://cgharbi77130.github.io/Hggsp-X-Cgharbi-AI/" class="nav-link-hggsp">HGGSP X CGHARBI</a><div class="minimal-timer" id="min-timer"></div></nav><script>const target=new Date("June 16, 2026 08:00:00").getTime();setInterval(()=>{const n=new Date().getTime();const d=target-n;const days=Math.floor(d/(1000*60*60*24));const hrs=Math.floor((d%(1000*60*60*24))/(1000*60*60));const mins=Math.floor((d%(1000*60*60))/(1000*60));document.getElementById("min-timer").innerHTML=days+"j "+hrs+"h "+mins+"m"},1000)</script>
 <div class="app">
 
 <!-- ═════════ SIDEBAR ═════════ -->

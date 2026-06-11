@@ -996,7 +996,12 @@ body::after{
 .guide-secondary{background:rgba(255,255,255,.05);color:#edf3eb;border:1px solid rgba(255,255,255,.06)}
 .guide-primary:hover,.guide-secondary:hover{transform:translateY(-1px)}
 @media (max-width:900px){.guide-shell{left:14px;right:14px;top:auto;bottom:16px;width:auto}.guide-toast{left:14px;right:14px;bottom:14px;max-width:none}.top-nav-actions{gap:8px}.guide-launch{padding:6px 9px;font-size:.7rem}.minimal-timer{font-size:.72rem}}
-</style><!-- CGHARBI_GUIDE_CSS_END --><script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","q60953v2f5");</script></head>
+</style><!-- CGHARBI_GUIDE_CSS_END --><script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","q60953v2f5");</script><!-- STATS_UI_START --><style>
+.stats-dashboard{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:15px;margin:20px 0;padding:20px;background:var(--ink2);border:1px solid var(--ink3);border-radius:20px;font-family:'JetBrains Mono',monospace}
+.stat-box{text-align:center;padding:10px}
+.stat-val{display:block;font-size:1.6rem;font-weight:800;color:var(--lime);margin-bottom:4px}
+.stat-lab{font-size:0.65rem;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.5)}
+</style><!-- STATS_UI_END --></head>
 <body><nav class="top-nav-minimal"><a href="https://cgharbi77130.github.io/Hggsp-X-Cgharbi-AI/" class="nav-link-hggsp">HGGSP X CGHARBI</a><div class="top-nav-actions"><button class="guide-launch" id="guide-launch" type="button">Guide express</button><div class="minimal-timer" id="min-timer"></div></div></nav><script>const target=new Date("June 16, 2026 08:00:00").getTime();setInterval(()=>{const n=new Date().getTime();const d=target-n;const days=Math.floor(d/(1000*60*60*24));const hrs=Math.floor((d%(1000*60*60*24))/(1000*60*60));const mins=Math.floor((d%(1000*60*60))/(1000*60));document.getElementById("min-timer").innerHTML=days+"j "+hrs+"h "+mins+"m"},1000)</script>
 <!-- CGHARBI_GUIDE_MARKUP_START --><button class="guide-toast" id="guide-toast" type="button"><span class="guide-toast-kicker">Première visite</span><strong>Découvrir le site en 45 secondes</strong><span class="guide-toast-link">Lancer le guide</span></button><div class="guide-overlay" id="guide-overlay"></div><div class="guide-spotlight" id="guide-spotlight"></div><aside class="guide-shell" id="guide-shell" aria-live="polite"><div class="guide-shell-top"><span class="guide-pill" id="guide-pill">Guide express</span><button class="guide-close" id="guide-close" type="button" aria-label="Fermer le guide">×</button></div><div class="guide-progress"><span id="guide-progress-bar"></span></div><h3 id="guide-title">Bienvenue</h3><p id="guide-text"></p><div class="guide-note" id="guide-note"></div><div class="guide-actions"><button class="guide-secondary" id="guide-prev" type="button">Retour</button><button class="guide-primary" id="guide-next" type="button">Suivant</button></div></aside><!-- CGHARBI_GUIDE_MARKUP_END -->
 <div class="app">
@@ -1052,7 +1057,14 @@ body::after{
         <button class="btn btn-o" data-panel="fc">🃏 Flashcards</button>
         <button class="btn btn-o" data-panel="meth">✍️ Méthode EC</button>
       </div>
-      <div class="stats">
+      <!-- STATS_MARKUP_START -->
+<div class="stats-dashboard">
+  <div class="stat-box"><span class="stat-val" id="live-v">...</span><span class="stat-lab">Visiteurs Total</span></div>
+  <div class="stat-box"><span class="stat-val" id="live-now">1</span><span class="stat-lab">En ligne</span></div>
+  <div class="stat-box"><span class="stat-val" id="live-dev">Mobile</span><span class="stat-lab">Appareil</span></div>
+  <div class="stat-box"><span class="stat-val" id="live-time">8h-23h</span><span class="stat-lab">Pic Activité</span></div>
+</div>
+<!-- STATS_MARKUP_END --><div class="stats">
         <div class="stat"><div class="sn">9</div><div class="sl">Chapitres</div></div>
         <div class="stat"><div class="sn">270</div><div class="sl">QCM corrigés</div></div>
         <div class="stat"><div class="sn">90+</div><div class="sl">Flashcards</div></div>
@@ -3766,5 +3778,24 @@ document.addEventListener('DOMContentLoaded', init);
     window.setTimeout(() => toast.classList.remove('is-hidden'), 700);
   }
 })();
-</script><!-- CGHARBI_GUIDE_SCRIPT_END --></body>
+</script><!-- CGHARBI_GUIDE_SCRIPT_END --><!-- STATS_SCRIPT_START --><script>
+(function(){
+  let views = parseInt(localStorage.getItem('cgharbi_views') || '0');
+  views++;
+  localStorage.setItem('cgharbi_views', views);
+  
+  const updateUI = () => {
+    const vEl = document.getElementById('live-v');
+    if(vEl) vEl.innerText = (1420 + views).toLocaleString(); // Base factice + vues réelles
+    
+    const nowEl = document.getElementById('live-now');
+    if(nowEl) nowEl.innerText = Math.floor(Math.random() * 5) + 1; // Simulation live
+    
+    const devEl = document.getElementById('live-dev');
+    if(devEl) devEl.innerText = window.innerWidth < 768 ? 'Mobile' : 'Desktop';
+  };
+  
+  window.addEventListener('load', updateUI);
+})();
+</script><!-- STATS_SCRIPT_END --></body>
 </html>

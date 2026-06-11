@@ -3773,5 +3773,65 @@ document.addEventListener('DOMContentLoaded', init);
     window.setTimeout(() => toast.classList.remove('is-hidden'), 700);
   }
 })();
-</script><!-- CGHARBI_GUIDE_SCRIPT_END --></body>
+</script><!-- CGHARBI_GUIDE_SCRIPT_END -->
+<!-- ANALYTICS_ENGINE_START -->
+<script>
+(function(){
+    const STORAGE_KEY = 'cgharbi_analytics_data';
+    
+    function getClientInfo() {
+        return {
+            ua: navigator.userAgent,
+            res: window.screen.width + 'x' + window.screen.height,
+            lang: navigator.language,
+            platform: navigator.platform,
+            touch: 'ontouchstart' in window
+        };
+    }
+
+    function logVisit() {
+        let data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{"total_views":0, "sessions":[], "events":[]}');
+        const now = new Date();
+        
+        data.total_views++;
+        data.sessions.push({
+            timestamp: now.toISOString(),
+            hour: now.getHours(),
+            day: now.toLocaleDateString(),
+            device: window.innerWidth < 768 ? 'Mobile' : 'Desktop',
+            info: getClientInfo()
+        });
+        
+        // On garde les 500 dernières interactions pour ne pas saturer le navigateur
+        if(data.sessions.length > 500) data.sessions.shift();
+        
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    }
+
+    // Capture des clics sur les boutons importants (QCM, Chapitres, HGGSP)
+    document.addEventListener('click', (e) => {
+        let target = e.target.closest('button, a, .qa-c, .sb-link');
+        if(target) {
+            let data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+            data.events = data.events || [];
+            data.events.push({
+                time: new Date().toISOString(),
+                label: target.innerText || target.getAttribute('data-panel') || 'element',
+                type: target.tagName
+            });
+            if(data.events.length > 500) data.events.shift();
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+        }
+    }, true);
+
+    window.addEventListener('load', logVisit);
+    
+    // Fonction globale pour que l'IA puisse extraire les données
+    window.__GET_CGHARBI_STATS__ = function() {
+        return JSON.parse(localStorage.getItem(STORAGE_KEY));
+    };
+})();
+</script>
+<!-- ANALYTICS_ENGINE_END -->
+</body>
 </html>

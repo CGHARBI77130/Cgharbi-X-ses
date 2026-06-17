@@ -1004,6 +1004,24 @@ body::after{
 .cookie-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}.cookie-btn{appearance:none;border:none;border-radius:14px;padding:11px 14px;font:700 .84rem/1 "Plus Jakarta Sans",sans-serif;cursor:pointer;transition:transform .16s ease,opacity .16s ease}.cookie-btn:hover{transform:translateY(-1px)}.cookie-accept{background:linear-gradient(135deg,var(--lime),var(--lime2));color:var(--ink)}.cookie-reject{background:rgba(255,255,255,.05);color:#eef3ec;border:1px solid rgba(255,255,255,.07)}.cookie-manage{background:transparent;color:var(--gold2);border:1px dashed rgba(245,200,66,.35)}
 @media (max-width:780px){.cookie-banner{left:12px;right:12px;bottom:12px;flex-direction:column;align-items:stretch}.cookie-actions{justify-content:stretch}.cookie-btn{flex:1}}
 </style><!-- CGHARBI_COOKIE_END -->
+<!-- FIREWORKS_START --><div class="fw-overlay" id="fw-overlay"><canvas class="fw-canvas" id="fw-canvas"></canvas><div class="fw-card"><span class="fw-emoji">🎉</span><span class="fw-kicker">Bac 2026 · C'est terminé</span><h2 class="fw-title">Bonnes vacances !</h2><p class="fw-subtitle">Tu as donné le meilleur pour ton Bac. Maintenant, place au <b>repos bien mérité</b>, aux <b>amis</b> et au <b>soleil</b>.</p><button class="fw-btn" id="fw-close" type="button">Profite à fond 🌴</button><span class="fw-sign">— Cgharbi X SES</span></div></div><!-- FIREWORKS_END -->
+<!-- FIREWORKS_START --><style>
+.fw-overlay{position:fixed;inset:0;z-index:9999;background:radial-gradient(circle at center,rgba(11,14,12,.85),rgba(0,0,0,.95));display:none;align-items:center;justify-content:center;opacity:0;transition:opacity .6s ease;overflow:hidden}
+.fw-overlay.on{display:flex;opacity:1}
+.fw-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.fw-card{position:relative;z-index:2;max-width:520px;width:90%;padding:42px 36px;text-align:center;background:linear-gradient(180deg,rgba(19,23,19,.92),rgba(11,14,12,.96));border:1px solid rgba(184,245,154,.25);border-radius:28px;backdrop-filter:blur(22px);box-shadow:0 30px 80px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.04),0 0 60px rgba(184,245,154,.15);transform:translateY(20px) scale(.95);transition:transform .7s cubic-bezier(.22,1,.36,1) .2s,opacity .7s ease .2s;opacity:0}
+.fw-overlay.on .fw-card{transform:translateY(0) scale(1);opacity:1}
+.fw-kicker{display:inline-block;margin-bottom:14px;padding:7px 14px;border-radius:999px;background:rgba(245,200,66,.1);border:1px solid rgba(245,200,66,.3);color:var(--gold2);font:700 .7rem/1 "JetBrains Mono",monospace;letter-spacing:.18em;text-transform:uppercase}
+.fw-title{font:700 2.4rem/1.05 "Fraunces",serif;margin:0 0 14px;background:linear-gradient(135deg,var(--lime),var(--gold2));-webkit-background-clip:text;background-clip:text;color:transparent;font-style:italic}
+.fw-subtitle{font:500 1.05rem/1.55 "Plus Jakarta Sans",sans-serif;color:rgba(255,255,255,.85);margin:0 0 26px}
+.fw-subtitle b{color:var(--lime2);font-weight:700}
+.fw-emoji{font-size:3.2rem;margin-bottom:8px;display:block;animation:fwBounce 1.8s ease-in-out infinite}
+@keyframes fwBounce{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-12px) rotate(5deg)}}
+.fw-btn{appearance:none;border:none;padding:14px 28px;border-radius:14px;background:linear-gradient(135deg,var(--lime),var(--lime2));color:var(--ink);font:700 .95rem/1 "Plus Jakarta Sans",sans-serif;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease;box-shadow:0 8px 22px rgba(184,245,154,.25)}
+.fw-btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(184,245,154,.35)}
+.fw-sign{display:block;margin-top:18px;font:600 .78rem/1 "JetBrains Mono",monospace;color:rgba(255,255,255,.45);letter-spacing:.1em}
+@media (max-width:600px){.fw-card{padding:32px 24px}.fw-title{font-size:1.9rem}.fw-subtitle{font-size:.95rem}}
+</style><!-- FIREWORKS_END -->
 </head>
 <body><nav class="top-nav-minimal"><a href="https://cgharbi77130.github.io/Hggsp-X-Cgharbi-AI/" class="nav-link-hggsp">HGGSP X CGHARBI</a><div class="top-nav-actions"><button class="guide-launch" id="guide-launch" type="button">Guide express</button><div class="minimal-timer" id="min-timer"></div></div></nav><script>const target=new Date("June 16, 2026 08:00:00").getTime();setInterval(()=>{const n=new Date().getTime();const d=target-n;const days=Math.floor(d/(1000*60*60*24));const hrs=Math.floor((d%(1000*60*60*24))/(1000*60*60));const mins=Math.floor((d%(1000*60*60))/(1000*60));document.getElementById("min-timer").innerHTML=days+"j "+hrs+"h "+mins+"m"},1000)</script>
 <!-- CGHARBI_GUIDE_MARKUP_START --><button class="guide-toast" id="guide-toast" type="button"><span class="guide-toast-kicker">Première visite</span><strong>Découvrir le site en 45 secondes</strong><span class="guide-toast-link">Lancer le guide</span></button><div class="guide-overlay" id="guide-overlay"></div><div class="guide-spotlight" id="guide-spotlight"></div><aside class="guide-shell" id="guide-shell" aria-live="polite"><div class="guide-shell-top"><span class="guide-pill" id="guide-pill">Guide express</span><button class="guide-close" id="guide-close" type="button" aria-label="Fermer le guide">×</button></div><div class="guide-progress"><span id="guide-progress-bar"></span></div><h3 id="guide-title">Bienvenue</h3><p id="guide-text"></p><div class="guide-note" id="guide-note"></div><div class="guide-actions"><button class="guide-secondary" id="guide-prev" type="button">Retour</button><button class="guide-primary" id="guide-next" type="button">Suivant</button></div></aside><!-- CGHARBI_GUIDE_MARKUP_END -->
@@ -3931,5 +3949,82 @@ document.addEventListener('DOMContentLoaded', init);
   });
 })();
 </script><!-- ANALYTICS_ENGINE_END -->
+<!-- FIREWORKS_START --><script>
+(function(){
+  const overlay = document.getElementById('fw-overlay');
+  const canvas = document.getElementById('fw-canvas');
+  const closeBtn = document.getElementById('fw-close');
+  if(!overlay || !canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H, particles = [], fireworks = [], animId = null;
+  function resize(){ W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize);
+  function rand(min, max){ return Math.random() * (max - min) + min; }
+  const colors = ['#b8f59a', '#f5c842', '#ff7a5c', '#7ec8f0', '#d0fbb8', '#ffd968', '#ff9a82'];
+  function createFirework(){
+    const x = rand(W * 0.15, W * 0.85);
+    const y = rand(H * 0.15, H * 0.5);
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    const count = 50 + Math.floor(Math.random() * 30);
+    for(let i = 0; i < count; i++){
+      const angle = (Math.PI * 2 * i) / count + rand(-0.1, 0.1);
+      const speed = rand(2, 6);
+      particles.push({
+        x, y,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed,
+        life: 1,
+        decay: rand(0.008, 0.02),
+        color,
+        size: rand(1.5, 3.5)
+      });
+    }
+  }
+  function loop(){
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.15)';
+    ctx.fillRect(0, 0, W, H);
+    particles = particles.filter(p => p.life > 0);
+    particles.forEach(p => {
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vy += 0.08;
+      p.vx *= 0.99;
+      p.life -= p.decay;
+      ctx.globalAlpha = p.life;
+      ctx.fillStyle = p.color;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.shadowBlur = 15;
+      ctx.shadowColor = p.color;
+    });
+    ctx.globalAlpha = 1;
+    ctx.shadowBlur = 0;
+    animId = requestAnimationFrame(loop);
+  }
+  function startShow(){
+    resize();
+    overlay.classList.add('on');
+    createFirework();
+    loop();
+    const interval = setInterval(() => {
+      if(overlay.classList.contains('on')){ createFirework(); }
+      else { clearInterval(interval); }
+    }, 700);
+  }
+  function stopShow(){
+    overlay.classList.remove('on');
+    if(animId) cancelAnimationFrame(animId);
+    particles = [];
+    document.cookie = 'cgharbi_vacances_vu=1; expires=' + new Date(Date.now() + 30*864e5).toUTCString() + '; path=/; SameSite=Lax';
+    localStorage.setItem('cgharbi_vacances_vu', '1');
+  }
+  closeBtn.addEventListener('click', stopShow);
+  window.addEventListener('load', () => {
+    const seen = localStorage.getItem('cgharbi_vacances_vu') || document.cookie.includes('cgharbi_vacances_vu=1');
+    if(!seen){ setTimeout(startShow, 1200); }
+  });
+})();
+</script><!-- FIREWORKS_END -->
 </body>
 </html>
